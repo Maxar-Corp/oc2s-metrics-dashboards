@@ -1,0 +1,19 @@
+[
+  {
+    "_id": "Sprint18-Demo-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Sprint18 Demo Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"id\": \"WMS-time-histogram\",\n    \"panelIndex\": 1,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 4,\n    \"id\": \"WMS-Average-response-time\",\n    \"panelIndex\": 2,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"WMS-Return-Status\",\n    \"panelIndex\": 3,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 10,\n    \"id\": \"WMS-call-count\",\n    \"panelIndex\": 4,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"id\": \"Call-Types\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 5,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"col\": 1,\n    \"row\": 3\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": false\n}",
+      "uiStateJSON": "{\n  \"P-1\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-2\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  }\n}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+      }
+    }
+  }
+]
