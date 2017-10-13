@@ -15,7 +15,8 @@
                     [ "...", "i-0eecbe50bc2ae15b0", { "label": "o2-openshift-node-02.ossim.io", "period": 300 } ],
                     [ "...", "i-066bfdb6c8ee36817", { "label": "o2-openshift-node-03.ossim.io", "period": 300 } ],
                     [ "...", "i-045f97ca294c38efb", { "period": 300, "label": "o2-openshift-node-04.ossim.io" } ],
-                    [ "...", "i-016d0c00a697a6716", { "period": 300, "label": "o2-openshift-node-05.ossim.io" } ]
+                    [ "...", "i-016d0c00a697a6716", { "period": 300, "label": "o2-openshift-node-05.ossim.io" } ],
+                    [ "...", { "period": 300, "label": "o2-openshift-nfs-01.ossim.io", "color": "#9edae5" } ]
                 ],
                 "region": "us-east-1",
                 "period": 300,
@@ -62,12 +63,12 @@
                 "stacked": false,
                 "metrics": [
                     [ "AWS/EC2", "NetworkIn", "InstanceId", "i-0d74ac47b92c368a4", { "label": "o2-openshift-master-01.ossim.io" } ],
-                    [ "...", "i-0989ba6406f32db98", { "label": "o2-openshift-nfs-01.ossim.io" } ],
-                    [ "...", "i-0eecbe50bc2ae15b0", { "label": "o2-openshift-node-02.ossim.io" } ],
-                    [ "...", "i-066bfdb6c8ee36817", { "label": "o2-openshift-node-03.ossim.io" } ],
-                    [ "...", "i-0e013db94d6752a52", { "label": "o2-openshift-node-01.ossim.io" } ],
-                    [ "...", "i-045f97ca294c38efb", { "label": "o2-openshift-node-04.ossim.io" } ],
-                    [ "...", "i-016d0c00a697a6716", { "label": "o2-openshift-node-05.ossim.io" } ]
+                    [ "...", "i-0e013db94d6752a52", { "label": "o2-openshift-node-01.ossim.io", "color": "#ff7f0e" } ],
+                    [ "...", "i-0eecbe50bc2ae15b0", { "label": "o2-openshift-node-02.ossim.io", "color": "#2ca02c" } ],
+                    [ "...", "i-066bfdb6c8ee36817", { "label": "o2-openshift-node-03.ossim.io", "color": "#d62728" } ],
+                    [ "...", "i-045f97ca294c38efb", { "label": "o2-openshift-node-04.ossim.io", "color": "#9467bd" } ],
+                    [ "...", "i-016d0c00a697a6716", { "label": "o2-openshift-node-05.ossim.io", "color": "#8c564b" } ],
+                    [ "...", "i-0989ba6406f32db98", { "label": "o2-openshift-nfs-01.ossim.io", "color": "#9edae5" } ]
                 ],
                 "region": "us-east-1",
                 "period": 300
@@ -84,12 +85,12 @@
                 "stacked": false,
                 "metrics": [
                     [ "AWS/EC2", "NetworkOut", "InstanceId", "i-0d74ac47b92c368a4", { "label": "o2-openshift-master-01.ossim.io" } ],
-                    [ "...", "i-0989ba6406f32db98", { "label": "o2-openshift-nfs-01.ossim.io" } ],
                     [ "...", "i-0e013db94d6752a52", { "label": "o2-openshift-node-01.ossim.io" } ],
                     [ "...", "i-0eecbe50bc2ae15b0", { "label": "o2-openshift-node-02.ossim.io" } ],
                     [ "...", "i-066bfdb6c8ee36817", { "label": "o2-openshift-node-03.ossim.io" } ],
                     [ "...", "i-045f97ca294c38efb", { "label": "o2-openshift-node-04.ossim.io" } ],
-                    [ "...", "i-016d0c00a697a6716", { "label": "o2-openshift-node-05.ossim.io" } ]
+                    [ "...", "i-016d0c00a697a6716", { "label": "o2-openshift-node-05.ossim.io" } ],
+                    [ "...", "i-0989ba6406f32db98", { "label": "o2-openshift-nfs-01.ossim.io", "color": "#9edae5" } ]
                 ],
                 "region": "us-east-1",
                 "period": 300
