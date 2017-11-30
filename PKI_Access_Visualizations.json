@@ -1,5 +1,33 @@
 [
   {
+    "_id": "OMAR-UI-Accesses",
+    "_type": "visualization",
+    "_source": {
+      "title": "OMAR UI Accesses",
+      "visState": "{\"title\":\"Omar UI Accesses\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"email\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.labels.app:\\\"omar-pki-proxy-app\\\" AND request:\\\"/omar-ui/omar\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OMAR-UI-Accesses-Pie-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "OMAR UI Accesses Pie Chart",
+      "visState": "{\"title\":\"Omar UI Accesses Pie\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.labels.app:\\\"omar-pki-proxy-app\\\" AND request:\\\"/omar-ui/omar\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
     "_id": "PKI-Accesses",
     "_type": "visualization",
     "_source": {
@@ -10,20 +38,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"kubernetes.labels.app:\\\"omar-pki-proxy-app\\\"\"}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Omar-UI-Accesses",
-    "_type": "visualization",
-    "_source": {
-      "title": "Omar UI Accesses",
-      "visState": "{\"title\":\"PKI Accesses\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"email\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.labels.app:\\\"omar-pki-proxy-app\\\" AND request:\\\"/omar-ui/omar\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
