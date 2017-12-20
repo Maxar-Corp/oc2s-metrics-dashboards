@@ -1,0 +1,506 @@
+[
+  {
+    "_id": "Download-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "Download Requests",
+      "visState": "{\"title\":\"Download Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Download-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "Download Response Time",
+      "visState": "{\"title\":\"Download Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Download-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "Download Response Status",
+      "visState": "{\"title\":\"Download Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Download-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Download Users",
+      "visState": "{\"title\":\"Download Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-download\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Download-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "Download Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Requests",
+      "visState": "{\"title\":\"Geoscript Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Features-Matched",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Features Matched",
+      "visState": "{\"title\":\"Geoscript Features Matched\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numberMatched\",\"interval\":10,\"min_doc_count\":false,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND numberMatched\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Response Time",
+      "visState": "{\"title\":\"Geoscript Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Response Status",
+      "visState": "{\"title\":\"Geoscript Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Users",
+      "visState": "{\"title\":\"Geoscript Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-geoscript\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Geoscript-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "Geoscript Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMTS-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMTS Requests",
+      "visState": "{\"title\":\"WMTS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMTS-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMTS Response Time",
+      "visState": "{\"title\":\"WMTS Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMTS-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMTS Response Status",
+      "visState": "{\"title\":\"WMTS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMTS-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMTS Users",
+      "visState": "{\"title\":\"WMTS Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-wmts\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMTS-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMTS Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WCS-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "WCS Requests",
+      "visState": "{\"title\":\"WCS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WCS-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "WCS Response Time",
+      "visState": "{\"title\":\"WCS Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WCS-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "WCS Response Status",
+      "visState": "{\"title\":\"WCS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WCS-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "WCS Users",
+      "visState": "{\"title\":\"WCS Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-wcs\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WCS-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "WCS Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMS-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMS Requests",
+      "visState": "{\"title\":\"WMS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMS-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMS Response Time",
+      "visState": "{\"title\":\"WMS Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMS-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMS Response Status",
+      "visState": "{\"title\":\"WMS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMS-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMS Users",
+      "visState": "{\"title\":\"WMS Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-wms\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WMS-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "WMS Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WFS-Requests",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Requests",
+      "visState": "{\"title\":\"WFS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WFS-Response-Time",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Response Time",
+      "visState": "{\"title\":\"WFS Response Time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"responseTime\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND responseTime\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WFS-Response-Status",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Response Status",
+      "visState": "{\"title\":\"WFS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WFS-Users",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Users",
+      "visState": "{\"title\":\"WFS Users\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:*\\\\/omar-wfs\\\\/*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WFS-Request-Count",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Request Count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Features-Matched",
+    "_type": "visualization",
+    "_source": {
+      "title": "Features Matched",
+      "visState": "{\"title\":\"Features Matched\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numberMatched\",\"interval\":10,\"min_doc_count\":false,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND numberMatched\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OMAR-UI-Accesses-Pie-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "OMAR UI Accesses Pie Chart",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"user\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":15},\"schema\":\"segment\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"title\":\"OMAR UI Accesses Pie Chart\",\"type\":\"pie\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:\\\"/omar-ui/omar\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OMAR-UI-Accesses",
+    "_type": "visualization",
+    "_source": {
+      "title": "OMAR UI Accesses",
+      "visState": "{\"title\":\"OMAR UI Accesses\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"email\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\" AND request:\\\"/omar-ui/omar\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PKI-Accesses",
+    "_type": "visualization",
+    "_source": {
+      "title": "PKI Accesses",
+      "visState": "{\"title\":\"PKI Accesses\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"email\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PKI-Accesses-Pie-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "PKI Accesses Pie Chart",
+      "visState": "{\"title\":\"PKI Accesses Pie Chart\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-pki-proxy-app\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]
