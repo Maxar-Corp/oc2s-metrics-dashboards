@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "Ingest-Logs",
+    "_type": "search",
+    "_source": {
+      "title": "Ingest Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "image_id",
+        "file_name",
+        "file_size",
+        "acquisition_date",
+        "staging_time",
+        "download_time",
+        "time_from_acquisition",
+        "ingest_status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-stager-app\\\" AND _exists_:ingest_status\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  }
+]
