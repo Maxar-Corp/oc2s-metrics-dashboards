@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "Ingest-Logs-Dev",
+    "_type": "search",
+    "_source": {
+      "title": "Ingest Logs Dev",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "image_id",
+        "file_name",
+        "file_size",
+        "acquisition_date",
+        "staging_time",
+        "download_time",
+        "time_from_acquisition",
+        "ingest_status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-dev*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"kubernetes.container_name:\\\"omar-sqs-stager-app\\\" AND _exists_: duration\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Ingest-Logs-Stage",
+    "_type": "search",
+    "_source": {
+      "title": "Ingest Logs Stage",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "image_id",
+        "file_name",
+        "file_size",
+        "acquisition_date",
+        "staging_time",
+        "download_time",
+        "time_from_acquisition",
+        "ingest_status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-stage*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"kubernetes.container_name:\\\"omar-sqs-stager-app\\\" AND _exists_: duration\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Ingest-Logs-Prod",
+    "_type": "search",
+    "_source": {
+      "title": "Ingest Logs Prod",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "image_id",
+        "file_name",
+        "file_size",
+        "acquisition_date",
+        "staging_time",
+        "download_time",
+        "time_from_acquisition",
+        "ingest_status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"project.omar-prod*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"kubernetes.container_name:\\\"omar-sqs-stager-app\\\" AND _exists_: duration\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  }
+]
