@@ -1,27 +1,24 @@
-oc exec logging-es-h7db5wnk-4-3nt0g -- curl -XPUT -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-h7db5wnk-4-3nt0g:9200/_template/template_1 -d '{
+oc exec logging-es-h7db5wnk-5-g3wf5 -- curl -XPUT -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-h7db5wnk-5-g3wf5:9200/_template/template_1 -d '{
    "template":"project.omar-*",
    "settings":{
       "index.refresh_interval":"5s"
    },
    "mappings":{
-      "default":{
-         "_all":{
-            "enabled":true,
-            "omit_norms":true
-         },
-         "dynamic_templates":[
+      "my_mappings":{
+         "dynamic_templates": [
             {
-               "date_field":{
+               "date_fields": {
                   "match":"*Time*",
                   "match_mapping_type":"*",
-                  "mapping":{
+                  "mapping": {
                      "type":"date",
                      "index":"analyzed",
                      "omit_norms":true
                   }
                }
-            },
-               "message_field":{
+           },
+           {
+               "message_field": {
                   "match":"message",
                   "match_mapping_type":"string",
                   "mapping":{
@@ -32,7 +29,7 @@ oc exec logging-es-h7db5wnk-4-3nt0g -- curl -XPUT -s -k --cert /etc/elasticsearc
                }
             },
             {
-               "string_fields":{
+               "string_fields": {
                   "match":"*",
                   "match_mapping_type":"string",
                   "mapping":{
