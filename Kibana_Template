@@ -11,6 +11,16 @@ oc exec logging-es-h7db5wnk-4-3nt0g -- curl -XPUT -s -k --cert /etc/elasticsearc
          },
          "dynamic_templates":[
             {
+               "date_field":{
+                  "match":"*Time*",
+                  "match_mapping_type":"*",
+                  "mapping":{
+                     "type":"date",
+                     "index":"analyzed",
+                     "omit_norms":true
+                  }
+               }
+            },
                "message_field":{
                   "match":"message",
                   "match_mapping_type":"string",
@@ -46,6 +56,10 @@ oc exec logging-es-h7db5wnk-4-3nt0g -- curl -XPUT -s -k --cert /etc/elasticsearc
                      "type":"geo_point"
                   }
                }
+            },
+            "user":{
+               "type":"string",
+               "index":"not_analyzed"
             }
          }
       }
