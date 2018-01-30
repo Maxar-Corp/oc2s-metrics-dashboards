@@ -38,6 +38,45 @@ oc exec logging-es-h7db5wnk-4-3nt0g -- curl -XPUT -s -k --cert /etc/elasticsearc
                "type":"string",
                "index":"not_analyzed"
             },
+            "downloadStartTime":{
+               "type":"date"
+            },
+            "downloadEndTime":{
+               "type":"date"
+            },
+            "stageStartTime":{
+               "type":"date"
+            },
+            "stageEndTime":{
+               "type":"date"
+            },
+            "dataInfoStartTime":{
+               "type":"date"
+            },
+            "dataInfoEndTime":{
+               "type":"date"
+            },
+            "indexStartTime":{
+               "type":"date"
+            },
+            "indexEndTime":{
+               "type":"date"
+            },
+            "postAvroMetadataStartTime":{
+               "type":"date"
+            },
+            "postAvroMetadataEndTime":{
+               "type":"date"
+            },
+            "startTime":{
+               "type":"date"
+            },
+            "endTime":{
+               "type":"date"
+            },
+            "status":{
+               "type":"integer"
+            },
             "geoip":{
                "type":"object",
                "dynamic":true,
