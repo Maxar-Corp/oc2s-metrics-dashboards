@@ -554,7 +554,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested median staging time",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50],\"customLabel\":\"duration (mins)\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs",
