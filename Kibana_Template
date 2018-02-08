@@ -7,17 +7,6 @@ oc exec logging-es-h7db5wnk-15-8l0fq -- curl -XPUT -s -k --cert /etc/elasticsear
       "my_mappings":{
          "dynamic_templates": [
             {
-               "date_fields": {
-                  "match":"*Time*",
-                  "match_mapping_type":"*",
-                  "mapping": {
-                     "type":"date",
-                     "index":"analyzed",
-                     "omit_norms":true
-                  }
-               }
-           },
-           {
                "message_field": {
                   "match":"message",
                   "match_mapping_type":"string",
@@ -44,54 +33,6 @@ oc exec logging-es-h7db5wnk-15-8l0fq -- curl -XPUT -s -k --cert /etc/elasticsear
             "@version":{
                "type":"string",
                "index":"not_analyzed"
-            },
-            "downloadStartTime":{
-               "type":"date"
-            },
-            "downloadEndTime":{
-               "type":"date"
-            },
-            "stageStartTime":{
-               "type":"date"
-            },
-            "stageEndTime":{
-               "type":"date"
-            },
-            "dataInfoStartTime":{
-               "type":"date"
-            },
-            "dataInfoEndTime":{
-               "type":"date"
-            },
-            "indexStartTime":{
-               "type":"date"
-            },
-            "indexEndTime":{
-               "type":"date"
-            },
-            "postAvroMetadataStartTime":{
-               "type":"date"
-            },
-            "postAvroMetadataEndTime":{
-               "type":"date"
-            },
-            "startTime":{
-               "type":"date"
-            },
-            "endTime":{
-               "type":"date"
-            },
-            "status":{
-               "type":"integer"
-            },
-            "geoip":{
-               "type":"object",
-               "dynamic":true,
-               "properties":{
-                  "location":{
-                     "type":"geo_point"
-                  }
-               }
             },
             "user":{
                "type":"string",

@@ -1,4 +1,4 @@
-[
+"httpStatus\"[
   {
     "_id": "WMTS-Response-Time",
     "_type": "visualization",
@@ -18,12 +18,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WMTS Requests",
-      "visState": "{\"title\":\"WMTS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WMTS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -32,12 +32,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WMTS Response Status",
-      "visState": "{\"title\":\"WMTS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WMTS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -65,7 +65,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wmts-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -74,12 +74,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WCS Requests",
-      "visState": "{\"title\":\"WCS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WCS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -102,12 +102,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WCS Response Status",
-      "visState": "{\"title\":\"WCS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WCS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -135,7 +135,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wcs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -144,12 +144,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WMS Requests",
-      "visState": "{\"title\":\"WMS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WMS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -172,12 +172,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WMS Response Status",
-      "visState": "{\"title\":\"WMS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WMS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -200,12 +200,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WFS Requests",
-      "visState": "{\"title\":\"WFS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WFS Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -214,12 +214,12 @@
     "_type": "visualization",
     "_source": {
       "title": "Geoscript Requests",
-      "visState": "{\"title\":\"Geoscript Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Geoscript Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -256,12 +256,12 @@
     "_type": "visualization",
     "_source": {
       "title": "Geoscript Response Status",
-      "visState": "{\"title\":\"Geoscript Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Geoscript Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -270,12 +270,12 @@
     "_type": "visualization",
     "_source": {
       "title": "Download Response Status",
-      "visState": "{\"title\":\"Download Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Download Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -284,12 +284,12 @@
     "_type": "visualization",
     "_source": {
       "title": "Download Requests",
-      "visState": "{\"title\":\"Download Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Download Requests\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":true}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -312,12 +312,12 @@
     "_type": "visualization",
     "_source": {
       "title": "WFS Response Status",
-      "visState": "{\"title\":\"WFS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"WFS Response Status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"}}}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -396,7 +396,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested status",
-      "visState": "{\"title\":\"Ingested status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested status\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"404\":\"#E24D42\"}}}",
       "description": "",
       "savedSearchId": "Ingest-Logs",
@@ -426,7 +426,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested Images",
-      "visState": "{\"title\":\"Ingested Images\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"status\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested Images\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"httpStatus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"404\":\"#E24D42\"}}}",
       "description": "",
       "savedSearchId": "Ingest-Logs",
@@ -461,7 +461,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-geoscript-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -475,7 +475,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-download-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -489,7 +489,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wms-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -599,7 +599,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested table",
-      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"status\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"httpStatus\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs",
@@ -619,7 +619,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND status\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"project.omar-dev.ebadd419-70ba-11e7-a545-0e704fd9c8b2.*\",\"query\":{\"query_string\":{\"query\":\"kubernetes.container_name:\\\"omar-wfs-app\\\" AND httpStatus\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
