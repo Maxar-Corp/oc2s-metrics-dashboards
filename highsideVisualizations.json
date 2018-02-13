@@ -423,11 +423,11 @@
     }
   },
   {
-    "_id": "Ingested-duration-Dev",
+    "_id": "Ingested-average-duration-Dev",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested duration",
-      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
+      "title": "Ingested average duration",
+      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Dev",
@@ -536,11 +536,26 @@
     }
   },
   {
-    "_id": "Ingested-median-staging-time-Dev",
+    "_id": "Ingested-average-staging-time-Dev",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested median staging time",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50],\"customLabel\":\"duration (mins)\"}}],\"listeners\":{}}",
+      "title": "Ingested average staging time",
+      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Average Duration (seconds)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Ingest-Logs-Dev",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Ingested-average-queue-time-Dev",
+    "_type": "visualization",
+    "_source": {
+      "title": "Ingested average queue time",
+      "visState": "{\"title\":\"Ingested median queue time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Dev",
@@ -585,22 +600,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested table",
-      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"httpStatus\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Ingest-Logs-Dev",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Ingest-Median-Duration-Dev",
-    "_type": "visualization",
-    "_source": {
-      "title": "Ingest Median Duration",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\",\"customLabel\":\"Time on Queue\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Start Time\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Image IDs\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"File Size\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Acquisition Dates\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Total Duration\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Download Duration\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Stage Duration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Dev",
@@ -1092,11 +1092,11 @@
     }
   },
   {
-    "_id": "Ingested-duration-Stage",
+    "_id": "Ingested-average-duration-Stage",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested duration",
-      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
+      "title": "Ingested average duration",
+      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Stage",
@@ -1205,11 +1205,26 @@
     }
   },
   {
-    "_id": "Ingested-median-staging-time-Stage",
+    "_id": "Ingested-average-staging-time-Stage",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested median staging time",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "title": "Ingested average staging time",
+      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Average Duration (seconds)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Ingest-Logs-Stage",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Ingested-average-queue-time-Stage",
+    "_type": "visualization",
+    "_source": {
+      "title": "Ingested average queue time",
+      "visState": "{\"title\":\"Ingested median queue time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Stage",
@@ -1254,22 +1269,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested table",
-      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"httpStatus\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Ingest-Logs-Stage",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Ingest-Median-Duration-Stage",
-    "_type": "visualization",
-    "_source": {
-      "title": "Ingest Median Duration",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\",\"customLabel\":\"Time on Queue\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Start Time\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Image IDs\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"File Size\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Acquisition Dates\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Total Duration\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Download Duration\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Stage Duration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Stage",
@@ -1761,11 +1761,11 @@
     }
   },
   {
-    "_id": "Ingested-duration-Prod",
+    "_id": "Ingested-average-duration-Prod",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested duration",
-      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
+      "title": "Ingested average duration",
+      "visState": "{\"title\":\"Ingested duration\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"downloadDuration\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"stageDuration\"}},{\"id\":\"4\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"dataInfoDuration\"}},{\"id\":\"5\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"6\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"indexDuration\"}},{\"id\":\"7\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"postAvroMetadataDuration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Prod",
@@ -1874,11 +1874,26 @@
     }
   },
   {
-    "_id": "Ingested-median-staging-time-Prod",
+    "_id": "Ingested-average-staging-time-Prod",
     "_type": "visualization",
     "_source": {
-      "title": "Ingested median staging time",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "title": "Ingested average staging time",
+      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"customLabel\":\"Average Duration (seconds)\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Ingest-Logs-Prod",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Ingested-average-queue-time-Prod",
+    "_type": "visualization",
+    "_source": {
+      "title": "Ingested average queue time",
+      "visState": "{\"title\":\"Ingested median queue time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Prod",
@@ -1923,22 +1938,7 @@
     "_type": "visualization",
     "_source": {
       "title": "Ingested table",
-      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"httpStatus\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Ingest-Logs-Prod",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Ingest-Median-Duration-Prod",
-    "_type": "visualization",
-    "_source": {
-      "title": "Ingest Median Duration",
-      "visState": "{\"title\":\"Ingested median staging time\",\"type\":\"metric\",\"params\":{\"fontSize\":\"36\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\",\"percents\":[50]}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"Ingested table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"secondsOnQueue\",\"customLabel\":\"Time on Queue\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"startTime\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Start Time\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"imageids\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Image IDs\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"fileSize\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"File Size\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"acquisitionDates\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Acquisition Dates\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Total Duration\"}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"downloadDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Download Duration\"}},{\"id\":\"8\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"stageDuration\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Stage Duration\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Ingest-Logs-Prod",
