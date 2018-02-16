@@ -41,6 +41,30 @@ oc exec logging-es-h7db5wnk-15-8l0fq -- curl -XPUT -s -k --cert /etc/elasticsear
             "email":{
                "type":"string",
                "index":"not_analyzed"
+            },
+            "missionids":{
+               "type":"string",
+               "index":"analyzed"
+            },
+            "imageids":{
+               "type":"string",
+               "index":"analyzed"
+            },
+            "sensorids":{
+               "type":"string",
+               "index":"analyzed"
+            },
+            "fileTypes":{
+               "type":"string",
+               "index":"analyzed"
+            },
+            "filenames":{
+               "type":"string",
+               "index":"analyzed"
+            },
+            "entryIds":{
+               "type":"string",
+               "index":"analyzed"
             }
          }
       }
