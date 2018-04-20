@@ -1,4 +1,4 @@
-oc exec logging-es-h7db5wnk-15-8l0fq -- curl -XPUT -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-h7db5wnk-15-8l0fq:9200/_template/template_1 -d '{
+oc exec logging-es-h7db5wnk-16-nltvp -- curl -XPUT -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-h7db5wnk-16-nltvp:9200/_template/template_1 -d '{
    "template":"project.omar-*",
    "settings":{
       "index.refresh_interval":"5s"
