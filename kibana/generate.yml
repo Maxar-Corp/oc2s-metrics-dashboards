@@ -1,0 +1,19 @@
+---
+- name: Generate Kibana visualizations
+  hosts: localhost
+  roles:
+    - visualize
+
+  vars:
+    visualizations:
+      - title: test1
+        file: "visualizations/test.json"
+
+      - title: test2
+        template: "visualizations/ingest/ingest-mission-id-count.json.j2"
+
+
+      - title: "WFS Response Status Bar"
+        template: "visualizations/generic/service/response-status-bar.json.j2"
+        service: WFS
+        http_status_key: httpStatus

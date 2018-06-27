@@ -1,0 +1,6 @@
+---
+# defaults file for visualize
+output_dir: "{{ playbook_dir }}/output"
+input_dir: "{{ playbook_dir }}/visualizations"
+index: omar-dev
+validate: yes # Validate the JSON. When 'yes', the files will be reformatted (and shown as changed on subsiquent runs).

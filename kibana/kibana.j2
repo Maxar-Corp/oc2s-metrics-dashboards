@@ -1,0 +1,13 @@
+{%- macro getId(index, title) -%}
+    {%- set id_prefix = index -%} {# Used for referencing other visualizations. Later, it will be replaced with a random ID to be used for all generated visualizations for a single run. #}
+    {{- id_prefix~"_"~title.lower() | regex_replace('\\s', '-') -}} {# Should match the filenames of generated visualizations #}
+{%- endmacro -%}
+
+{#- Required params: "index", "item[.title]" -#}
+{%- if index and item and item.title -%}
+    {%- set vis = item -%}
+    {%- set title = "("~index~")" ~ " " ~ vis.title -%}
+    {%- set id = getId(index, vis.title) -%}
+{%- endif -%}
+
+{%- block kibana %}{% endblock kibana -%}

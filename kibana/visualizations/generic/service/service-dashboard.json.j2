@@ -1,0 +1,14 @@
+{% extends "visualizations/super/dashboard.json.j2" %}
+{% block source %} {
+            "title": "{{ title }}",
+            "hits": 0,
+            "description": "Standard service dashboard for {{ vis.service }}",
+            "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":10,\"y\":4,\"w\":2,\"h\":4,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"{{ getId(index, vis.v1) }}\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":8,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"search\",\"id\":\"{{ getId(index, vis.v2) }}\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":6,\"y\":0,\"w\":4,\"h\":4,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"{{ getId(index, vis.v3) }}\",\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":false}}},{\"panelIndex\":\"4\",\"gridData\":{\"x\":10,\"y\":0,\"w\":2,\"h\":4,\"i\":\"4\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"{{ getId(index, vis.v4) }}\",\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#9AC48A\",\"400\":\"#EA6460\"},\"legendOpen\":false}}},{\"panelIndex\":\"5\",\"gridData\":{\"x\":6,\"y\":4,\"w\":4,\"h\":4,\"i\":\"5\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"{{ getId(index, vis.v5) }}\",\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}}}]",
+            "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+            "version": 1,
+            "timeRestore": false,
+            "kibanaSavedObjectMeta": {
+                "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+            }
+        }
+{% endblock %}

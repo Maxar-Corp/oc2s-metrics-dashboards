@@ -1,0 +1,11 @@
+{% extends "visualizations/super/visualization.json.j2" %}
+{% block source %} {
+            "title": "{{ title }}",
+            "visState": "{\"title\": \"{{ title }}\",\"type\": \"pie\",\"params\": {\"shareYAxis\": true,\"addTooltip\": true,\"addLegend\": true,\"isDonut\": true,\"type\": \"pie\",\"legendPosition\": \"right\",\"labels\": {\"show\": true,\"values\": true,\"last_level\": true,\"truncate\": 100}},\"aggs\": [{\"id\": \"1\",\"enabled\": true,\"type\": \"count\",\"schema\": \"metric\",\"params\": {}},{\"id\": \"2\",\"enabled\": true,\"type\": \"terms\",\"schema\": \"segment\",\"params\": {\"field\": \"{{ vis.http_status_key }}\",\"otherBucket\": false,\"otherBucketLabel\": \"Other\",\"missingBucket\": false,\"missingBucketLabel\": \"Missing\",\"size\": 5,\"order\": \"desc\",\"orderBy\": \"1\"}}]}",
+            "uiStateJSON": "{\"vis\": {\"colors\": {\"200\": \"#9AC48A\",\"400\": \"#EA6460\"}}}",
+            "description": "Pie chart of {{ vis.service }} HTTP response codes",
+            "version": 1,
+            "kibanaSavedObjectMeta": {"searchSourceJSON": "{\"index\": \"{{ index }}\",\"query\": {\"query\": \"\",\"language\": \"lucene\"},\"filter\": [{\"meta\": {\"index\": \"{{ index }}\",\"negate\": false,\"disabled\": false,\"alias\": null,\"type\": \"phrase\",\"key\": \"kubernetes.container.name\",\"value\": \"omar-{{ vis.service.lower() }}-app\",\"params\": {\"query\": \"omar-{{ vis.service.lower() }}-app\",\"type\": \"phrase\"}},\"query\": {\"match\": {\"kubernetes.container.name\": {\"query\": \"omar-{{ vis.service.lower() }}-app\",\"type\": \"phrase\"}}},\"$state\": {\"store\": \"appState\"}},{\"meta\": {\"index\": \"{{ index }}\",\"negate\": false,\"disabled\": false,\"alias\": null,\"type\": \"exists\",\"key\": \"{{ vis.http_status_key }}\",\"value\": \"exists\"},\"exists\": {\"field\": \"{{ vis.http_status_key }}\"},\"$state\": {\"store\": \"appState\"}}]}"
+            }
+        }
+{% endblock %}

@@ -1,0 +1,4 @@
+kibana/output/**/*
+kibana/*.retry
+
+.idea/**/*

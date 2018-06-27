@@ -1,0 +1,8 @@
+{% extends "kibana.j2" %}
+{% block kibana %}
+{
+    "_id": "{{ id }}",
+    "_type": "search",
+    "_source": {% block source %}{% endblock %}
+}
+{% endblock %}

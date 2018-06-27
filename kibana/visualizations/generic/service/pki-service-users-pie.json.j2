@@ -1,0 +1,12 @@
+{% extends "visualizations/super/visualization.json.j2" %}
+{% block source %} {
+            "title": "{{ title }}",
+            "visState": "{\"title\":\"{{ title }}\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"shareYAxis\":true,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+            "uiStateJSON": "{}",
+            "description": "Pie chart of PKI users of the {{ vis.service }} endpoint",
+            "version": 1,
+            "kibanaSavedObjectMeta": {
+                "searchSourceJSON": "{\"index\":\"{{ index }}\",\"query\":{\"query\":\"request:*omar-{{ vis.service.lower() }}*\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"{{ index }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-pki-proxy-app\",\"params\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+            }
+        }
+{% endblock %}

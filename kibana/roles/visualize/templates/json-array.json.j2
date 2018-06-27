@@ -1,0 +1,6 @@
+[
+    {% for file in files %}
+    {{ lookup('file', file.path) }} {#- Using parent dir, '../', since we exect this file to be in a subdirectory. #}
+    {{ "," if not loop.last else "" }}
+    {% endfor %}
+]

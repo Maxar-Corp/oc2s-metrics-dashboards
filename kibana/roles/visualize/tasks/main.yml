@@ -1,0 +1,48 @@
+---
+# tasks file for visualize
+- name: List visualizations
+  debug:
+    msg: "Generating visualizations for: \n{{ visualizations }}"
+
+- name: Create output directory
+  file:
+    path: "{{ output_dir }}"
+    state: directory
+
+- name: Create input directory and core templates
+  copy:
+    src: "kibana.j2"
+    dest: "{{ playbook_dir }}"
+
+- name: Render template visualizations
+  template:
+    src: "{{ playbook_dir }}/{{ item.template }}"
+    dest: "{{ output_dir }}/{{ index | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
+  loop: "{{ visualizations }}"
+  when: item.template is defined
+  register: foo
+  notify: Validate visualizations
+
+- name: Render raw visualizations
+  template:
+    src: "object.json.j2"
+    dest: "{{ output_dir }}/{{ index | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
+  loop: "{{ visualizations }}"
+  when: item.file is defined
+  notify: Validate visualizations
+
+- name: Gather completed visualization files
+  find:
+    paths: "{{ output_dir}}/"
+    use_regex: yes
+    patterns: "^((?!all.json).)*$"
+    file_type: file
+  register: vis_files
+
+- name: Template visualizations into single file
+  template:
+    src: "json-array.json.j2"
+    dest: "{{ output_dir }}/all.json"
+  vars:
+    files: "{{ vis_files.files }}"
+  notify: Validate visualizations

@@ -1,0 +1,8 @@
+---
+# handlers file for visualize
+- name: Validate visualizations
+  copy:
+    content: "{{ lookup('file', item) | from_json | to_nice_json }}"
+    dest: "{{ item }}"
+  with_fileglob: "{{ output_dir }}/*.json"
+  when: validate

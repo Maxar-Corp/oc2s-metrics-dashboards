@@ -1,0 +1,20 @@
+{% extends "kibana.j2" %}
+{% block kibana %}
+
+{#- Parse raw JSON into variable -#}
+{%- set json_index = item.json_index | default(0) -%}
+{%- set raw = lookup('file', playbook_dir~'/'~item.file) | from_json -%}
+{%- if raw is iterable and raw is not string and raw[json_index] is defined -%} {#- Check to see if the JSON is an object or a list of objects. -#}
+    {%- set raw = raw[json_index] -%}
+{%- endif -%}
+
+{#- Replace title in the _source and in the visState -#}
+{%- set searchSourceJSON = raw._source.kibanaSavedObjectMeta.searchSourceJSON | from_json | combine({'index' : index}) | to_json -%}
+{%- set visState = raw._source.visState | from_json | combine({'title' : title}) | to_json -%}
+{%- set _source = raw._source | combine({'title' : title, 'visState' : visState, 'kibanaSavedObjectMeta' : {'searchSourceJSON' : searchSourceJSON} }, recursive=true) | to_nice_json -%}
+{
+    "_id": "{{ id }}",
+    "_type": "{{ raw._type }}",
+    "_source": {{ _source }}
+}
+{% endblock %}

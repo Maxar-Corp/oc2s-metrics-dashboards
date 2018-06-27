@@ -1,0 +1,3 @@
+---
+# var file for visualize
+kibana: "{{ playbook_dir }}/roles/visualize/templates/kibana.j2"
