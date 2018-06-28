@@ -18,3 +18,12 @@
         template: "visualizations/generic/service/response-status-bar.json.j2"
         service: WFS
         http_status_key: httpStatus
+
+      - title: "Ingest MissionID Count" 
+        file: visualizations/Ingest-MissionID-Count.json
+
+      - title: "Ingest MissionID Table" 
+        file: visualizations/Ingest-MissionID-Table.json
+      
+      - title: "Ingest Image Summary" 
+        file: visualizations/Ingest-Image-Summary.json 
