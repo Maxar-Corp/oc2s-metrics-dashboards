@@ -21,7 +21,8 @@ Follow these steps to export your new visualization or search from Kibana and ad
 0. Open the _generate.yml_ file
 0. Add an item to the `visualizations` list.
 
-```json
+```yaml
+# generate.yml
 ... other stuff ...
 
 visualizations:
