@@ -6,24 +6,13 @@
 
   vars:
     index_pattern: omar-dev # Required
-    validate: no            # Optional | Defaults to 'yes'
     visualizations:
-      - title: test1
-        file: visualizations/test.json
-
-      - title: test2
-        template: "visualizations/ingest/ingest-mission-id-count.json.j2"
-
-      - title: "WFS Response Status Bar"
-        template: "visualizations/generic/service/response-status-bar.json.j2"
-        service: WFS
-        http_status_key: httpStatus
 
       - title: "Ingest MissionID Count" 
-        file: visualizations/Ingest-MissionID-Count.json
+        file: visualizations/ingest/Ingest-MissionID-Count.json
 
       - title: "Ingest MissionID Table" 
-        file: visualizations/Ingest-MissionID-Table.json
+        file: visualizations/ingest/Ingest-MissionID-Table.json
       
       - title: "Ingest Image Summary" 
-        file: visualizations/Ingest-Image-Summary.json 
+        file: visualizations/ingest/Ingest-Image-Summary.json
