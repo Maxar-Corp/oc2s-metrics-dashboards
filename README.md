@@ -126,7 +126,7 @@ Or a JSON list of visualizations:
 [
     {
       "_id": "cdc03c10-7593-11e8-bae2-613bc26f7fc6",
-      ... other kibana stuff ...
+      "... other kibana stuff ...": ""
     },
     {
       "_id": "cdc03c10-7593-11e8-bae2-613bc26f7fc6",
