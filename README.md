@@ -11,15 +11,15 @@ For specific template docs, see [this document].
 Follow these steps to export your new visualization or search from Kibana and add it to the play.
 
 #### Steps: Exporting from Kibana
-0. In Kibana, go to **Management | Saved Objects | Dashboards/Searches/Visualizations**
-0. Find the visualization and check its box
-0. Click **Export** to download the file
-0. Rename the file
-0. Move the file into the appropriate subdirectory under _visualizations_
+- In Kibana, go to **Management | Saved Objects | Dashboards/Searches/Visualizations**
+- Find the visualization and check its box
+- Click **Export** to download the file
+- Rename the file
+- Move the file into the appropriate subdirectory under _visualizations_
 
-#### Steps: Adding to the play
-0. Open the _generate.yml_ file
-0. Add an item to the `visualizations` list.
+#### Steps: Adding a visualization to the play
+- Open the _generate.yml_ file
+- Add an item to the `visualizations` list.
 
 ```yaml
 # generate.yml
@@ -31,6 +31,11 @@ visualizations:
     file: visualizations/PATH_TO_HELLO_WORLD.json
 
 ```
+
+#### Steps: Importing the visualizations into Kibana
+- In Kibana, go to **Management | Saved Objects** and click **Import**
+- Find the newly generated `all.json` file under the `output/` directory
+- Select the `all.json` to import it (*You may be prompted to overwrite the old visualizations)
 
 ### Generating Visualizations
 
