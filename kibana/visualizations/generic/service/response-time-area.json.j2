@@ -6,7 +6,7 @@
         "description": "An area chart of the response time percentiles",
         "version": 1,
         "kibanaSavedObjectMeta": {
-            "searchSourceJSON": "{\"index\":\"{{ index }}\",\"filter\":[{\"meta\":{\"index\":\"{{ index }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-{{ vis.service.lower() }}-app\",\"params\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+            "searchSourceJSON": "{\"index\":\"{{ index_pattern }}\",\"filter\":[{\"meta\":{\"index\":\"{{ index_pattern }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-{{ vis.service.lower() }}-app\",\"params\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
         }
     } 
 {% endblock %}

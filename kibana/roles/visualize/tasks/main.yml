@@ -17,19 +17,16 @@
 - name: Render template visualizations
   template:
     src: "{{ playbook_dir }}/{{ item.template }}"
-    dest: "{{ output_dir }}/{{ index | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
+    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
   loop: "{{ visualizations }}"
   when: item.template is defined
-  register: foo
-  notify: Validate visualizations
 
 - name: Render raw visualizations
   template:
     src: "object.json.j2"
-    dest: "{{ output_dir }}/{{ index | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
+    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
   loop: "{{ visualizations }}"
   when: item.file is defined
-  notify: Validate visualizations
 
 - name: Gather completed visualization files
   find:
@@ -45,4 +42,10 @@
     dest: "{{ output_dir }}/all.json"
   vars:
     files: "{{ vis_files.files }}"
-  notify: Validate visualizations
+
+- name: Validate visualizations
+  copy:
+    content: "{{ lookup('file', item) | from_json | to_nice_json }}"
+    dest: "{{ item }}"
+  with_fileglob: "{{ output_dir }}/*.json"
+  when: validate

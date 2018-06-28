@@ -1,7 +1,7 @@
 {% extends "kibana.j2" %}
 {% block kibana %}
   {
-    "_id": "{{ getId(index, item.title) }}",
+    "_id": "{{ getId(index_pattern, item.title) }}",
     "_type": "visualization",
     "_source": {
       "title": "Ingest MissionID Count",

@@ -10,7 +10,7 @@
             ],
             "version": 1,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"index\":\"{{ index }}\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"{{ index }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-{{ vis.service.lower() }}-app\",\"params\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+                "searchSourceJSON": "{\"index\":\"{{ index_pattern }}\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"{{ index_pattern }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-{{ vis.service.lower() }}-app\",\"params\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-{{ vis.service.lower() }}-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
             }
         }
 {% endblock %}

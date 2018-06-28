@@ -6,7 +6,7 @@
             "description": "Pie chart of PKI users of the {{ vis.service }} endpoint",
             "version": 1,
             "kibanaSavedObjectMeta": {
-                "searchSourceJSON": "{\"index\":\"{{ index }}\",\"query\":{\"query\":\"request:*omar-{{ vis.service.lower() }}*\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"{{ index }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-pki-proxy-app\",\"params\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+                "searchSourceJSON": "{\"index\":\"{{ index_pattern }}\",\"query\":{\"query\":\"request:*omar-{{ vis.service.lower() }}*\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"{{ index_pattern }}\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-pki-proxy-app\",\"params\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-pki-proxy-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
             }
         }
 {% endblock %}
