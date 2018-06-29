@@ -16,3 +16,6 @@
       
       - title: "Ingest Image Summary" 
         file: visualizations/ingest/Ingest-Image-Summary.json
+
+      - title: "Ingested Image Count & Size"
+        file: visualizations/ingest/Ingested-Image-Count-&-Size.json
