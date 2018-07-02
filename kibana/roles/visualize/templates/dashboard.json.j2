@@ -1,0 +1,47 @@
+{% extends "kibana.j2" %}
+{% block kibana %}
+    {#--------------------------------#}
+    {#- Parse raw JSON into variable -#}
+    {%- set _source = raw._source -%}
+
+    {#---------------------------------------------------------------#}
+    {#- All: Replace _source title and search index and description -#}
+    {%- set searchSourceJSON = _source.kibanaSavedObjectMeta.searchSourceJSON | from_json | combine({'index' : index_pattern}) | to_json -%}
+    {%- set _source = _source | combine({'title' : fancy_title}) -%}
+    {%- set _source = _source | combine({'kibanaSavedObjectMeta' : {'searchSourceJSON' : searchSourceJSON} }, recursive=true) -%}
+    {%- if item.description is defined -%}
+        {%- set _source = _source | combine({'description' : item.description}) -%}
+    {%- endif -%}
+
+    {#-------------#}
+    {#- Dashboard -#}
+
+    {%- set panelsRaw = _source.panelsJSON | from_json -%}
+    {%- for panel in panelsRaw -%}
+        {#- Set title and type based on the item -#}
+        {%- set panelTitle = "Unspecified" -%}
+        {%- set panelType = panel.type -%}
+        {%- if item.panels[loop.index0].visualization is defined -%}
+            {%- set panelTitle = item.panels[loop.index0].visualization -%}
+            {%- set panelType = "visualization" -%}
+        {%- elif item.panels[loop.index0].search is defined -%}
+            {%- set panelTitle = item.panels[loop.index0].search -%}
+            {%- set panelType = "search" -%}
+        {%- endif -%}
+
+        {#- Replace id and type -#}
+        {%- set __ignore = panel.update({"id" : getId(index_pattern, panelTitle) }) -%}
+        {%- set __ignore = panel.update({"type" : panelType }) -%}
+    {%- endfor -%}
+    {%- set _source = _source | combine({ 'panelsJSON' : panelsRaw | to_json }) -%}
+
+    {#----------------#}
+    {#- MAIN CONTENT -#}
+[
+    {
+    "_id": "{{ id }}",
+    "_type": "{{ raw._type }}",
+    "_source": {{ _source | to_nice_json }}
+    }
+]
+{% endblock %}

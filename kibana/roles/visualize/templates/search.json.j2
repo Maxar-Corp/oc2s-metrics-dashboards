@@ -1,0 +1,31 @@
+{% extends "kibana.j2" %}
+{% block kibana %}
+    {#--------------------------------#}
+    {#- Parse raw JSON into variable -#}
+    {%- set _source = raw._source -%}
+
+    {#---------------------------------------------------------------#}
+    {#- All: Replace _source title and search index and description -#}
+    {%- set searchSourceJSON = _source.kibanaSavedObjectMeta.searchSourceJSON | from_json | combine({'index' : index_pattern}) | to_json -%}
+    {%- set _source = _source | combine({'title' : fancy_title}) -%}
+    {%- set _source = _source | combine({'kibanaSavedObjectMeta' : {'searchSourceJSON' : searchSourceJSON} }, recursive=true) -%}
+    {%- if item.description is defined -%}
+        {%- set _source = _source | combine({'description' : item.description}) -%}
+    {%- endif -%}
+
+    {#----------#}
+    {#- Search -#}
+    {%- if item.columns is defined -%}
+        {%- set _source = _source | combine({'columns' : item.columns}) -%}
+    {%- endif -%}
+
+    {#----------------#}
+    {#- MAIN CONTENT -#}
+[
+    {
+    "_id": "{{ id }}",
+    "_type": "{{ raw._type }}",
+    "_source": {{ _source | to_nice_json }}
+    }
+]
+{% endblock %}

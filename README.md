@@ -19,15 +19,15 @@ Follow these steps to export your new visualization or search from Kibana and ad
 
 #### Steps: Adding a visualization to the play
 - Open the _generate.yml_ file
-- Add an item to the `visualizations` list.
+- Add an item to the `kibana` list.
 
 ```yaml
 # generate.yml
 ... other stuff ...
 
-visualizations:
+kibana:
   # Add your visualization here
-  - title: Hello World
+  - visualization: Hello World
     file: visualizations/PATH_TO_HELLO_WORLD.json
 
 ```
@@ -58,51 +58,39 @@ The play should look something like this:
     - visualize
 
   vars:
-    index_pattern: omar-dev # Required.
-    validate: no # Optional. Defaults to 'yes'.
+    index_pattern: omar-dev                      # Requires the index pattern
+    validate: no                                 # Optionally validate (and pretty print) JSON
     
-    visualizations:
-      - title: test1
-        file: "visualizations/test.json"
+    kibana:
+      - visualization: Test Visualization 1      # The title of your visualization
+        file: visualizations/test1.json          # The path to the JSON file of your visualization
 
-      - title: test2
-        template: "visualizations/ingest/ingest-mission-id-count.json.j2"
-
-      - title: "WFS Response Status Bar"
-        template: "visualizations/generic/service/response-status-bar.json.j2"
-        service: WFS
-        http_status_key: httpStatus
+      - visualization: Test Visualization 2
+        file: visualizations/test2.json
+        description: This is a description!      # Add descriptions
+        search: First Test Search                # Specify a search for the visualization by title
+        
+      - search: First Test Search                # Declare a "visualization", "search", or "dashboard"
+        file: visualizations/search.json
+    
+      - search: Second Test Search
+        file: visualizations/search.json
+        columns:                                 # Optionally list columns of the search
+          - foo
+          - bar
+          - foobar
+          
+      - dashboard: My Dashboard
+        file: visualizations/my-dashboard.json
+        panels:                                  # Specify dashboard panels by title
+          - visualization: Test Visualization 1
+          - visualization: Test Visualization 2
+          - search: First Test Search
 ```
 
-The example play contains three visualizations
+The example play contains visualizations, searches, and dashboards.
 
-The first and second visualizations are simple _File Visualizations_ noted by the `file: "PATH"`. All visualizations require that a `title` and either a `file` or `template` variables be specified.
-
-Some _Template Visualizations_ require other variables. The third visualization, _WFS Response Status Bar_, uses a template that additionally requires `service` and `http_status_key`.
-
-Complex visualizations or dashboards can be specified depending on the template. Here is an example of one might specify such a template:
-
-```json
-... other variables ...
-
-visualizations:
-  # Some simple visualizations
-  - title: WMS Popular Images
-    file: "visualization/<...>/popular-images.json"
-    
-  - title: WMS Response Time
-    template: "visualizations/<...>/response-time.json.j2"
-    service: WMS
-    response_time_key: responseTime
-    
-  # A dynamic dashboard template   
-  - title: WMS Example Dashboard
-    template: "visualizations/<...>/two-panel-dashboard.json.j2"
-    panels:
-      panel1: WMS Popular Images
-      panel2: WMS Response Time
-
-```
+Another type of visualization is the _Template Visualization_. _Template Visualization_ may require other variables.
 
 ### Visualization Types
 
@@ -144,9 +132,6 @@ The `_id` and `title` are overwritten to match the standard `id` pattern and use
 
 **NOTE 1:**
 _Currently you cannot use Jinja2 templates inside a File Visualization and they must contain only valid JSON. This restriction may be removed in the future._
-
-**NOTE 2:**
-_Currently dashboards are linked by ID and must be turned into templates with configurable links to visualizations. This restriction may be removed in the future when auto-id linking is added._
 
 #### Template Visualizations
 

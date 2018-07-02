@@ -2,7 +2,7 @@
 # tasks file for visualize
 - name: List visualizations
   debug:
-    msg: "Generating visualizations for: \n{{ visualizations }}"
+    msg: "Generating visualizations for: {{ kibana }}"
 
 - name: Create output directory
   file:
@@ -14,19 +14,33 @@
     src: "kibana.j2"
     dest: "{{ playbook_dir }}"
 
-- name: Render template visualizations
+- name: Render templates
   template:
     src: "{{ playbook_dir }}/{{ item.template }}"
     dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
-  loop: "{{ visualizations }}"
+  loop: "{{ kibana }}"
   when: item.template is defined
 
-- name: Render raw visualizations
+- name: Render Visualizations
   template:
-    src: "object.json.j2"
-    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.title.lower() | regex_replace('\\s', '-') }}.json"
-  loop: "{{ visualizations }}"
-  when: item.file is defined
+    src: "visualization.json.j2"
+    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.visualization.lower() | regex_replace('\\s', '-') }}.json"
+  loop: "{{ kibana }}"
+  when: item.visualization is defined
+
+- name: Render Searches
+  template:
+    src: "search.json.j2"
+    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.search.lower() | regex_replace('\\s', '-') }}.json"
+  loop: "{{ kibana }}"
+  when: item.search is defined and not item.visualization is defined
+
+- name: Render Dashboards
+  template:
+    src: "dashboard.json.j2"
+    dest: "{{ output_dir }}/{{ index_pattern | regex_replace('\\*','@') }}_{{ item.dashboard.lower() | regex_replace('\\s', '-') }}.json"
+  loop: "{{ kibana }}"
+  when: item.dashboard is defined
 
 - name: Gather completed visualization files
   find:

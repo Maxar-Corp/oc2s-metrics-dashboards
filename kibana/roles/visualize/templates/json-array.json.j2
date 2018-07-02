@@ -1,6 +1,6 @@
 [
     {% for file in files %}
-    {{ lookup('file', file.path) }} {#- Using parent dir, '../', since we exect this file to be in a subdirectory. #}
+    {{ (lookup('file', file.path) | from_json)[0] | to_nice_json }}
     {{ "," if not loop.last else "" }}
     {% endfor %}
 ]

@@ -1,13 +1,41 @@
+{#------------------------------#}
+{#----------- Macros -----------#}
 {%- macro getId(index_pattern, title) -%}
     {%- set id_prefix = index_pattern -%} {# Used for referencing other visualizations. Later, it will be replaced with a random ID to be used for all generated visualizations for a single run. #}
     {{- id_prefix~"_"~title.lower() | regex_replace('\\s', '-') -}} {# Should match the filenames of generated visualizations #}
 {%- endmacro -%}
 
-{#- Required params: "index_pattern", "item[.title]" -#}
-{%- if index_pattern and item and item.title -%}
-    {%- set vis = item -%}
-    {%- set title = "("~index_pattern~")" ~ " " ~ vis.title -%}
-    {%- set id = getId(index_pattern, vis.title) -%}
+{%- macro getFancyTitle(aTitle) -%}
+    {#- TODO: Make prefix configurable -#}
+    {{- "("~index_pattern~")" ~ " " ~ title -}}
+{%- endmacro -%}
+
+{#--------------#}
+{#- Init title -#}
+{%- if item.visualization is defined -%}
+    {%- set title = item.visualization -%}
+{%- elif item.search is defined -%}
+    {%- set title = item.search -%}
+{%- elif item.dashboard is defined -%}
+    {%- set title = item.dashboard -%}
 {%- endif -%}
 
+{%- set fancy_title = getFancyTitle(title) -%}
+
+{#-------------------#}
+{#- Init ID and vis -#}
+{%- set vis = item -%}
+{%- set id = getId(index_pattern, title) -%}
+
+{#--------------------------------#}
+{#- Parse raw JSON into variable -#}
+{%- set json_index = item.json_index | default(0) -%}
+{%- set raw = lookup('file', playbook_dir~'/'~item.file) | from_json -%}
+{%- if raw is iterable and raw is not string and raw[json_index] is defined -%} {#- Check to see if the JSON is an object or a list of objects. -#}
+    {%- set raw = raw[json_index] -%}
+{%- endif -%}
+
+{#----------------#}
+{#- MAIN CONTENT -#}
+{#{%- set _ignore = _init() -%}#}
 {%- block kibana %}{% endblock kibana -%}

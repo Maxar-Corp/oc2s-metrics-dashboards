@@ -1,0 +1,37 @@
+{% extends "kibana.j2" %}
+{% block kibana %}
+    {#--------------------------------#}
+    {#- Parse raw JSON into variable -#}
+    {%- set _source = raw._source -%}
+
+    {#---------------------------------------------------------------#}
+    {#- All: Replace _source title and search index and description -#}
+    {%- set searchSourceJSON = _source.kibanaSavedObjectMeta.searchSourceJSON | from_json | combine({'index' : index_pattern}) | to_json -%}
+    {%- set _source = _source | combine({'title' : fancy_title}) -%}
+    {%- set _source = _source | combine({'kibanaSavedObjectMeta' : {'searchSourceJSON' : searchSourceJSON} }, recursive=true) -%}
+    {%- if item.description is defined -%}
+        {%- set _source = _source | combine({'description' : item.description}) -%}
+    {%- endif -%}
+
+    {#-----------------#}
+    {#- Visualization -#}
+
+    {#- Replace visState.title -#}
+    {%- set visState = _source.visState | from_json | combine({'title' : title}) | to_json -%}
+    {%- set _source = _source | combine({'visState' : visState}, recursive=true) -%}
+
+    {#- Replace savedSearchId -#}
+    {%- if _source.savedSearchId is defined and item.search is defined -%}
+        {%- set _ignore = _source.update({'savedSearchId' : getId(index_pattern, item.search) }) -%}
+    {%- endif -%}
+
+    {#----------------#}
+    {#- MAIN CONTENT -#}
+[
+    {
+        "_id": "{{ id }}",
+        "_type": "{{ raw._type }}",
+        "_source": {{ _source | to_nice_json }}
+    }
+]
+{% endblock %}

@@ -6,13 +6,37 @@
 
   vars:
     index_pattern: omar-dev # Required
-    visualizations:
+    kibana:
 
-      - title: "Ingest MissionID Count" 
+      - visualization: "Ingest MissionID Count"
         file: visualizations/ingest/Ingest-MissionID-Count.json
 
-      - title: "Ingest MissionID Table" 
+      - visualization: "Ingest MissionID Table"
         file: visualizations/ingest/Ingest-MissionID-Table.json
-      
-      - title: "Ingest Image Summary" 
+
+      - visualization: "Ingest Image Summary"
         file: visualizations/ingest/Ingest-Image-Summary.json
+
+      - search: "Example Search"
+        file: visualizations/ingest-logs-search.json
+        columns:
+          - Foo1
+          - Foo2
+          - Foo3
+
+      - visualization: "Example Vis"
+        file: visualizations/example-vis-with-search.json
+        search: Example Search
+        description: This is a test
+
+      - dashboard: Example Dashboard
+        file: visualizations/ingest-dashboard-test.json
+        panels:
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Count
+          - search: Ingest MissionID Count
