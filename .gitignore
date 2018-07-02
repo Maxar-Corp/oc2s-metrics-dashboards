@@ -2,3 +2,5 @@ kibana/output/**/*
 kibana/*.retry
 
 .idea/**/*
+
+**/*.DS_Store
