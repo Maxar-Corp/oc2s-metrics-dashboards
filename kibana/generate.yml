@@ -8,35 +8,39 @@
     index_pattern: omar-dev # Required
     kibana:
 
-      - visualization: "Ingest MissionID Count"
-        file: visualizations/ingest/Ingest-MissionID-Count.json
+      # --- Ingest ---
+      - visualization: Ingested Images
+        file: visualizations/ingest/ingest-images.json
 
-      - visualization: "Ingest MissionID Table"
-        file: visualizations/ingest/Ingest-MissionID-Table.json
+      - visualization: Ingested MissionIDs
+        file: visualizations/ingest/ingest-missionids.json
 
-      - visualization: "Ingest Image Summary"
-        file: visualizations/ingest/Ingest-Image-Summary.json
+      - visualization: Ingest Average Duration
+        file: visualizations/ingest/ingest-average-duration.json
 
-      - search: "Example Search"
-        file: visualizations/ingest-logs-search.json
-        columns:
-          - Foo1
-          - Foo2
-          - Foo3
+      - visualization: Ingested Images Count & Size
+        file: visualizations/ingest/ingest-image-count-&-size.json
 
-      - visualization: "Example Vis"
-        file: visualizations/example-vis-with-search.json
-        search: Example Search
-        description: This is a test
+      - visualization: Ingest MissionID Count
+        file: visualizations/ingest/ingest-missionid-count.json
 
-      - dashboard: Example Dashboard
-        file: visualizations/ingest-dashboard-test.json
+      - visualization: Ingest MissionID Table
+        file: visualizations/ingest/ingest-missionid-table.json
+
+      - visualization: Ingest Image Summary
+        file: visualizations/ingest/ingest-image-summary.json
+
+      - search: Ingest Logs
+        file: visualizations/ingest/ingest-logs.json
+
+      - dashboard: Ingest Dashboard
+        file: visualizations/ingest/ingest-dashboard.json
         panels:
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - visualization: Ingest MissionID Count
-          - search: Ingest MissionID Count
+          - visualization: Ingest Images                    # Ingest-Logs
+          - visualization: Ingested MissionIDs              # Ingested-Images
+          - visualization: Ingest Average Duration          # Ingested-average-duration
+          - visualization: Ingested Images Count & Size     # Ingested-missionids
+          - visualization: Ingest MissionID Count           # Ingest MissionID Table
+          - visualization: Ingest MissionID Table           # Ingest MissionID Count
+          - visualization: Ingest Image Summary             # Ingest Image Summary
+          - search: Ingest Logs                             # Ingested Image Count & Size

@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "Ingest-Logs",
+    "_type": "search",
+    "_source": {
+      "title": "Ingest Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "imageids",
+        "missionids",
+        "filename",
+        "fileSize",
+        "acquisitionDate",
+        "duration"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"omar-dev\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-sqs-stager-app\",\"params\":{\"query\":\"omar-sqs-stager-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-sqs-stager-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"omar-dev\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"httpStatus\",\"value\":\"exists\"},\"exists\":{\"field\":\"httpStatus\"},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
