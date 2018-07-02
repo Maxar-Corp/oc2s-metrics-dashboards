@@ -36,11 +36,11 @@
       - dashboard: Ingest Dashboard
         file: visualizations/ingest/ingest-dashboard.json
         panels:
-          - visualization: Ingest Images                    # Ingest-Logs
-          - visualization: Ingested MissionIDs              # Ingested-Images
-          - visualization: Ingest Average Duration          # Ingested-average-duration
-          - visualization: Ingested Images Count & Size     # Ingested-missionids
-          - visualization: Ingest MissionID Count           # Ingest MissionID Table
-          - visualization: Ingest MissionID Table           # Ingest MissionID Count
-          - visualization: Ingest Image Summary             # Ingest Image Summary
-          - search: Ingest Logs                             # Ingested Image Count & Size
+          - visualization: Ingested Images
+          - visualization: Ingested MissionIDs
+          - visualization: Ingest Average Duration
+          - visualization: Ingested Images Count & Size
+          - visualization: Ingest MissionID Count
+          - visualization: Ingest MissionID Table
+          - visualization: Ingest Image Summary
+          - search: Ingest Logs

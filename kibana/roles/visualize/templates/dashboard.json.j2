@@ -16,7 +16,16 @@
     {#-------------#}
     {#- Dashboard -#}
 
-    {%- set panelsRaw = _source.panelsJSON | from_json -%}
+    {#- Sort panels by their y, then x position -#}
+    {%- set sortedPanels = [] -%}
+    {%- for yPos, panels in _source.panelsJSON | from_json | groupby(attribute='gridData.y') -%}
+        {%- set tempPanels = panels | sort(attribute='gridData.x') -%}
+        {%- set __ignore = sortedPanels.append(tempPanels) -%}
+    {%- endfor -%}
+    {%- set sortedPanels = sortedPanels | flatten -%}
+
+    {#- Loop through panels and update their type and ID -#}
+    {%- set panelsRaw = sortedPanels -%}
     {%- for panel in panelsRaw -%}
         {#- Set title and type based on the item -#}
         {%- set panelTitle = "Unspecified" -%}
