@@ -9,6 +9,9 @@
     kibana:
 
       # --- Ingest ---
+      - search: Ingest Logs
+        file: visualizations/ingest/ingest-logs.json
+
       - visualization: Ingested Images
         file: visualizations/ingest/ingest-images.json
 
@@ -20,18 +23,19 @@
 
       - visualization: Ingested Images Count & Size
         file: visualizations/ingest/ingest-image-count-&-size.json
+        search: Ingest Logs
 
       - visualization: Ingest MissionID Count
         file: visualizations/ingest/ingest-missionid-count.json
+        search: Ingest Logs
 
       - visualization: Ingest MissionID Table
         file: visualizations/ingest/ingest-missionid-table.json
+        search: Ingest Logs
 
       - visualization: Ingest Image Summary
         file: visualizations/ingest/ingest-image-summary.json
-
-      - search: Ingest Logs
-        file: visualizations/ingest/ingest-logs.json
+        search: Ingest Logs
 
       - dashboard: Ingest Dashboard
         file: visualizations/ingest/ingest-dashboard.json
