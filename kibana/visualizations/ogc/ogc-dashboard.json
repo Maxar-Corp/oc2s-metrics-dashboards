@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "a5986a40-7ee5-11e8-ade1-eb098c360e67",
+    "_type": "dashboard",
+    "_source": {
+      "title": "OGC Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":21,\"y\":24,\"w\":27,\"h\":12,\"i\":\"1\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"404\":\"#E24D42\"},\"legendOpen\":false}},\"id\":\"37e2d720-7edf-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":24,\"w\":21,\"h\":12,\"i\":\"2\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"404\":\"#E24D42\"},\"legendOpen\":false}},\"id\":\"5a26d020-7edf-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":36,\"w\":29,\"h\":18,\"i\":\"3\"},\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"id\":\"5ff090b0-7ee2-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":29,\"y\":36,\"w\":19,\"h\":18,\"i\":\"4\"},\"embeddableConfig\":{},\"id\":\"4528dfb0-7ee4-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":36,\"y\":0,\"w\":12,\"h\":7,\"i\":\"5\"},\"embeddableConfig\":{},\"id\":\"05575460-7ee5-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"6\",\"gridData\":{\"x\":0,\"y\":0,\"w\":36,\"h\":13,\"i\":\"6\"},\"embeddableConfig\":{\"spy\":null,\"vis\":{\"legendOpen\":false}},\"id\":\"cf2a7e10-7ee1-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":0,\"y\":13,\"w\":36,\"h\":11,\"i\":\"7\"},\"embeddableConfig\":{},\"id\":\"4cd824f0-7eee-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"8\",\"gridData\":{\"x\":36,\"y\":7,\"w\":12,\"h\":17,\"i\":\"8\"},\"embeddableConfig\":{},\"id\":\"602856a0-7eef-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"}]",
+      "optionsJSON": "{\"darkTheme\":true,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

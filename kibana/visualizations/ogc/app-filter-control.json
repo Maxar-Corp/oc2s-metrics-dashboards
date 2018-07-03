@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "05575460-7ee5-11e8-ade1-eb098c360e67",
+    "_type": "visualization",
+    "_source": {
+      "title": "App Filter Control",
+      "visState": "{\"title\":\"App Filter Control\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1530638184422\",\"indexPattern\":\"omar-dev\",\"fieldName\":\"kubernetes.container.name\",\"parent\":\"\",\"label\":\"Apps\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":10,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  }
+]

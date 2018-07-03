@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "602856a0-7eef-11e8-ade1-eb098c360e67",
+    "_type": "visualization",
+    "_source": {
+      "title": "OGC Service Dashboard Instructions",
+      "visState": "{\"title\":\"OGC Service Dashboard Instructions\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"# OGC Services\\nThis dashboard is for viewing standard O2 metrics provided by the OGC apps.\\n\\nClick on a visualization or slice of data to interactively browse metrics.\\n\\nTo save changes to this dashboard, follow [the instructions](https://github.com/radiantbluetechnologies/oc2s-metrics-dashboards/blob/dev/README.md).\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  }
+]

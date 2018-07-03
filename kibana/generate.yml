@@ -56,3 +56,48 @@
           - visualization: Latest Images Remaining on Ingest Queue
           - visualization: Ingest Image Summary
           - search: Ingest Logs
+
+      # --- OGC Services ---
+      - visualization: App Filter
+        file: visualizations/ogc/app-filter-control.json
+        description: A filter control to select an app by name
+
+      - visualization: Response Time Average
+        file: visualizations/ogc/average-response-time-chart.json
+        description: Average response time split by app
+
+      - visualization: HTTP Status Chart
+        file: visualizations/ogc/http-status-chart.json
+        description: Chart of HTTP status code split by app
+
+      - visualization: HTTP Status Pie
+        file: visualizations/ogc/http-status-pie.json
+        description: Pie of HTTP status code split by app
+
+      - visualization: OGC Dashboard Instructions
+        file: visualizations/ogc/ogc-dashboard-instructions.json
+
+      - visualization: Request Methods Pie
+        file: visualizations/ogc/request-method-pie.json
+        description: Pie of Request Methods split by app
+
+      - visualization: Request Methods Cloud
+        file: visualizations/ogc/request-method-word-cloud.json
+        description: Word cloud of Request Methods
+
+      - visualization: Response Size Chart
+        file: visualizations/ogc/response-size-chart.json
+        description: Chart of Response Size split by app
+
+      - dashboard: OGC Services
+        file: visualizations/ogc/ogc-dashboard.json
+        description: High level view of all OGC apps
+        panels:
+          - visualization: Response Time Average
+          - visualization: App Filter
+          - visualization: OGC Dashboard Instructions
+          - visualization: Response Size Chart
+          - visualization: HTTP Status Pie
+          - visualization: HTTP Status Chart
+          - visualization: Request Methods Pie
+          - visualization: Request Methods Cloud
