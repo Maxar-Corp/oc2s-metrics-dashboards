@@ -33,6 +33,12 @@
         file: visualizations/ingest/ingest-missionid-table.json
         search: Ingest Logs
 
+      - visualization: Images on Ingest Queue
+        file: visualizations/ingest/images-on-queue-chart.json
+
+      - visualization: Latest Images Remaining on Ingest Queue
+        file: visualizations/ingest/latest-images-remaining-on-queue.json
+
       - visualization: Ingest Image Summary
         file: visualizations/ingest/ingest-image-summary.json
         search: Ingest Logs
@@ -46,5 +52,7 @@
           - visualization: Ingested Images Count & Size
           - visualization: Ingest MissionID Count
           - visualization: Ingest MissionID Table
+          - visualization: Images on Ingest Queue
+          - visualization: Latest Images Remaining on Ingest Queue
           - visualization: Ingest Image Summary
           - search: Ingest Logs
