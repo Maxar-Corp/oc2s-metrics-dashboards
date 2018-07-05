@@ -107,8 +107,8 @@
       - visualization: Concurrent Users Chart
         file: visualizations/users/concurrent-users.json
 
-      - visualization: Machine-Human Interfaces Pie
-        file: visualizations/users/machine-human-interfaces-pie.json
+      - visualization: Service Interface Type Pie
+        file: visualizations/users/service-interfaces-pie.json
 
       - visualization: Unique Users Metric
         file: visualizations/users/unique-users-metric.json
