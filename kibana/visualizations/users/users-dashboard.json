@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "a4ef58e0-806d-11e8-ade1-eb098c360e67",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Users Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":32,\"y\":0,\"w\":16,\"h\":12,\"i\":\"1\"},\"embeddableConfig\":{},\"id\":\"9699a320-806a-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":0,\"w\":16,\"h\":12,\"i\":\"2\"},\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"id\":\"4cda2e80-7ef3-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":12,\"w\":48,\"h\":16,\"i\":\"3\"},\"embeddableConfig\":{},\"id\":\"47fe1fa0-806c-11e8-ade1-eb098c360e67\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":16,\"y\":0,\"w\":16,\"h\":12,\"i\":\"4\"},\"version\":\"6.3.0\",\"type\":\"visualization\",\"id\":\"bb78f590-806c-11e8-ade1-eb098c360e67\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":true,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

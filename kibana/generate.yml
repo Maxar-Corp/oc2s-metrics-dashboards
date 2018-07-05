@@ -6,6 +6,7 @@
 
   vars:
     index_pattern: omar-dev # Required
+    validate: no
     kibana:
 
       # --- Ingest ---
@@ -101,3 +102,25 @@
           - visualization: HTTP Status Chart
           - visualization: Request Methods Pie
           - visualization: Request Methods Cloud
+
+      # --- Users ---
+      - visualization: Concurrent Users Chart
+        file: visualizations/users/concurrent-users.json
+
+      - visualization: Machine-Human Interfaces Pie
+        file: visualizations/users/machine-human-interfaces-pie.json
+
+      - visualization: Unique Users Metric
+        file: visualizations/users/unique-users-metric.json
+
+      - visualization: Users Pie
+        file: visualizations/users/users-pie.json
+        description: A pie of user names by their number of hits
+
+      - dashboard: Users
+        file: visualizations/users/users-dashboard.json
+        panels:
+          - visualization: Users Pie
+          - visualization: Unique Users Metric
+          - visualization: Machine-Human Interfaces Pie
+          - visualization: Concurrent Users Chart
