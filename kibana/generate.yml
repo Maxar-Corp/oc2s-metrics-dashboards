@@ -122,5 +122,5 @@
         panels:
           - visualization: Users Pie
           - visualization: Unique Users Metric
-          - visualization: Machine-Human Interfaces Pie
+          - visualization: Service Interface Type Pie
           - visualization: Concurrent Users Chart
