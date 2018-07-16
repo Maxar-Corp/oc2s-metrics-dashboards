@@ -25,7 +25,7 @@
     {
     "_id": "{{ id }}",
     "_type": "{{ raw._type }}",
-    "_source": {{ _source | to_nice_json }}
+    "_source": {{ replaceIndexInStringifiedJson(_source | to_nice_json) }}
     }
 ]
 {% endblock %}

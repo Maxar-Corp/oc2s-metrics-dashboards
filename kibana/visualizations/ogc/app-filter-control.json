@@ -4,7 +4,7 @@
     "_type": "visualization",
     "_source": {
       "title": "App Filter Control",
-      "visState": "{\"title\":\"App Filter Control\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1530638184422\",\"indexPattern\":\"omar-dev\",\"fieldName\":\"kubernetes.container.name\",\"parent\":\"\",\"label\":\"Apps\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":10,\"order\":\"desc\"}}],\"updateFiltersOnChange\":true,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+      "visState": "{\n  \"title\": \"App Filter Control\",\n  \"type\": \"input_control_vis\",\n  \"params\": {\n    \"controls\": [\n      {\n        \"id\": \"1530638184422\",\n        \"indexPattern\": \"omar-dev\",\n        \"fieldName\": \"kubernetes.container.name\",\n        \"parent\": \"\",\n        \"label\": \"Apps\",\n        \"type\": \"list\",\n        \"options\": {\n          \"type\": \"terms\",\n          \"multiselect\": true,\n          \"size\": 10,\n          \"order\": \"desc\"\n        }\n      }\n    ],\n    \"updateFiltersOnChange\": true,\n    \"useTimeFilter\": false,\n    \"pinFilters\": false\n  },\n  \"aggs\": []\n}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,

@@ -10,6 +10,10 @@
     {{- "("~index_pattern~")" ~ " " ~ title -}}
 {%- endmacro -%}
 
+{%- macro replaceIndexInStringifiedJson(stringifiedJson) -%}
+    {{ stringifiedJson | regex_replace('index\\\\"[\\s]*:[\\s]*\\\\"[\\w\\W]*?\\\\"', 'index\\": \\"'~index_pattern~'\\"') | regex_replace('indexPattern\\\\"[\\s]*:[\\s]*\\\\"[\\w\\W]*?\\\\"', 'index\\": \\"'~index_pattern~'\\"') }}
+{%- endmacro -%}
+
 {#--------------#}
 {#- Init title -#}
 {%- if item.visualization is defined -%}
