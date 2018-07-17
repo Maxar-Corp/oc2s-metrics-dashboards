@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "a82395a0-8930-11e8-b965-bf4596b8d26c",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Mission ID Pie",
+      "visState": "{\"title\":\"WFS Mission ID Pie\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"keyword_missionId\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Mission ID\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]

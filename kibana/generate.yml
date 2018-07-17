@@ -124,3 +124,24 @@
           - visualization: Unique Users Metric
           - visualization: Service Interface Type Pie
           - visualization: Concurrent Users Chart
+
+      # --- WFS ---
+      - visualization: WFS Country Code Pie
+        file: visualizations/wfs/WFS-Country-Code-Pie.json
+
+      - visualization: WFS Mission ID Pie
+        file: visualizations/wfs/WFS-Mission-ID-Pie.json         
+
+      - visualization: WFS Sensor ID Pie
+        file: visualizations/wfs/WFS-Sensor-ID-Pie.json
+
+      - visualization: WFS Request Table
+        file: visualizations/wfs/WFS-Request-Table.json
+        
+      - dashboard: WFS Request Dashboard
+        file: visualizations/wfs/WFS-Request-Dashboard.json
+        panels:
+          - visualization: WFS Country Code Pie
+          - visualization: WFS Mission ID Pie
+          - visualization: WFS Sensor ID Pie
+          - visualization: WFS Request Table      

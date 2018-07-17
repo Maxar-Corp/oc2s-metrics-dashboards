@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "4e092800-89bc-11e8-b965-bf4596b8d26c",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Request Table",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customLabel\":\"Username\",\"field\":\"username\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"customLabel\":\"Search Date/Time\",\"field\":\"@timestamp\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"4\",\"params\":{\"customLabel\":\"Full WFS Search\",\"field\":\"params\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"5\",\"params\":{\"customLabel\":\"Country Code\",\"field\":\"keyword_countryCode\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"6\",\"params\":{\"customLabel\":\"Mission ID\",\"field\":\"keyword_missionId\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"},{\"enabled\":true,\"id\":\"7\",\"params\":{\"customLabel\":\"Sensor ID\",\"field\":\"keyword_sensorId\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":200},\"schema\":\"bucket\",\"type\":\"terms\"}],\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"title\":\"WFS Request Table\",\"type\":\"table\"}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"filter\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"omar-dev\",\"key\":\"filter\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}}],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  }
+]

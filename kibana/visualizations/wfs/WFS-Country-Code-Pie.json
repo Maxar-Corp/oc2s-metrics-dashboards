@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "8cfc2350-8930-11e8-b965-bf4596b8d26c",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Country Code Pie",
+      "visState": "{\"title\":\"WFS Country Code Pie\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"labels\":{\"last_level\":true,\"show\":false,\"truncate\":100,\"values\":true},\"legendPosition\":\"right\",\"type\":\"pie\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"keyword_countryCode\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Country Code\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  }
+]

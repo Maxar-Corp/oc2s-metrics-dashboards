@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "c4d7e980-8930-11e8-b965-bf4596b8d26c",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Sensor ID Pie",
+      "visState": "{\"title\":\"WFS Sensor ID Pie\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"keyword_sensorId\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Sensor ID\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    }
+  }
+]
