@@ -13,6 +13,9 @@
       - search: Ingest Logs
         file: visualizations/ingest/ingest-logs.json
 
+      - search: Ingest Durations
+        file: visualizations/ingest/ingest-durations-search.json
+
       - visualization: Ingested Images
         file: visualizations/ingest/ingest-images.json
 
@@ -55,8 +58,8 @@
           - visualization: Ingest MissionID Table
           - visualization: Images on Ingest Queue
           - visualization: Latest Images Remaining on Ingest Queue
-          - visualization: Ingest Image Summary
           - search: Ingest Logs
+          - search: Ingest Durations
 
       # --- OGC Services ---
       - visualization: App Filter

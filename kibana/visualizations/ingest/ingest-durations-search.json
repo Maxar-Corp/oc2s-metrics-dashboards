@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "0bfe1f00-d3cd-11e8-b531-2fb6c2418674",
+    "_type": "search",
+    "_source": {
+      "title": "(omar-dev) Ingest Durations",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "imageids",
+        "duration",
+        "downloadDuration",
+        "dataInfoDuration",
+        "stageDuration",
+        "indexDuration",
+        "postAvroMetadataDuration",
+        "totalDurationSinceAcquisition"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"omar-dev\",\"filter\":[{\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-sqs-stager-app\",\"type\":\"phrase\"}}},\"meta\":{\"index\":\"omar-dev\",\"value\":\"omar-sqs-stager-app\",\"disabled\":false,\"alias\":null,\"params\":{\"query\":\"omar-sqs-stager-app\",\"type\":\"phrase\"},\"key\":\"kubernetes.container.name\",\"negate\":false,\"type\":\"phrase\"},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"omar-dev\",\"value\":\"exists\",\"disabled\":false,\"alias\":null,\"key\":\"httpStatus\",\"negate\":false,\"type\":\"exists\"},\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"httpStatus\"}}],\"version\":true,\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"fragment_size\":2147483647,\"require_field_match\":false,\"fields\":{\"*\":{}},\"post_tags\":[\"@/kibana-highlighted-field@\"]},\"highlightAll\":true}"
+      }
+    }
+  }
+]
