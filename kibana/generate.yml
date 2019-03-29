@@ -147,4 +147,34 @@
           - visualization: WFS Country Code Pie
           - visualization: WFS Mission ID Pie
           - visualization: WFS Sensor ID Pie
-          - visualization: WFS Request Table      
+          - visualization: WFS Request Table
+
+      # --- WMS ---
+      - visualization: WMS Requests Map
+        file: visualizations/wms/wms-requests-map.json
+
+      - dashboard: WMS Mapview
+        file: visualizations/wms/wms-dashboard.json
+        panels:
+          - visualization: WMS Requests Map
+          - visualization: Response Size Chart
+          - visualization: Response Time Average
+          - visualization: HTTP Status Chart
+
+
+      # --- Weekly ---
+      - visualization: Weekly Chip Requests
+        file: visualizations/weekly/weekly-chip-requests.json
+
+      - visualization: Weekly HTTP Requests
+        file: visualizations/weekly/weekly-http-requests.json
+
+      - visualization: Weekly Unique Users
+        file: visualizations/weekly/weekly-unique-users.json
+
+      - dashboard: Weekly Usage Overview
+        file: visualizations/weekly/weekly-usage-overview-dashboard.json
+        panels:
+          - visualization: Weekly Chip Requests
+          - visualization: Weekly HTTP Requests
+          - visualization: Weekly Unique Users

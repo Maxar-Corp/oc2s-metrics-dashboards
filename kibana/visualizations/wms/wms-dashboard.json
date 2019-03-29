@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "f6152d50-b92d-11e8-b531-2fb6c2418674",
+    "_type": "dashboard",
+    "_source": {
+      "title": "WMS Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"x\":0,\"y\":0,\"w\":26,\"h\":28,\"i\":\"2\"},\"version\":\"6.4.0\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"id\":\"170dfaf0-b929-11e8-b531-2fb6c2418674\",\"embeddableConfig\":{\"mapCenter\":[19.311143355064655,-26.367187500000004],\"mapZoom\":2}},{\"gridData\":{\"x\":26,\"y\":0,\"w\":22,\"h\":9,\"i\":\"3\"},\"version\":\"6.4.0\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"id\":\"omar-dev_response-size-chart\",\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}}},{\"gridData\":{\"x\":26,\"y\":20,\"w\":22,\"h\":8,\"i\":\"4\"},\"version\":\"6.4.0\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"omar-dev_http-status-chart\",\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"400\":\"#BF1B00\",\"404\":\"#E24D42\"},\"legendOpen\":false}}},{\"gridData\":{\"x\":26,\"y\":9,\"w\":22,\"h\":11,\"i\":\"5\"},\"version\":\"6.4.0\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"id\":\"omar-dev_response-time-average\",\"embeddableConfig\":{\"spy\":null,\"vis\":{\"legendOpen\":false}}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"omar-dev\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-wms-app\",\"params\":{\"query\":\"omar-wms-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-wms-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  }
+]

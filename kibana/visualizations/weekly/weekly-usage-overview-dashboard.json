@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "94e44730-b92f-11e8-b531-2fb6c2418674",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Weekly Usage Overview",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"1\"},\"version\":\"6.4.0\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"id\":\"36c3aa10-b78b-11e8-b531-2fb6c2418674\",\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}}},{\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"2\"},\"version\":\"6.4.0\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"id\":\"23999bd0-b50a-11e8-9ca8-4fde0ce79462\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":15,\"w\":24,\"h\":15,\"i\":\"3\"},\"version\":\"6.4.0\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"id\":\"89d83060-b509-11e8-9ca8-4fde0ce79462\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-1y",
+      "refreshInterval": {
+        "pause": true,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  }
+]
