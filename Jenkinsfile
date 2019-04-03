@@ -4,7 +4,7 @@ String buildNodeDefault = "omar-build"
 properties([
         parameters([
                 string(name: 'BUILD_NODE', defaultValue: buildNodeDefault, description: 'The build node to run on'),
-                string(name: 'indexPattern', defaultValue: buildNodeDefault, description: 'The Kibana index pattern to build into the visualizations'),
+                string(name: 'indexPattern', defaultValue: 'omar-dev', description: 'The Kibana index pattern to build into the visualizations'),
                 booleanParam(name: 'validateJsonOutput', defaultValue: true, description: 'Checks the output is valid JSON. Disable this to save a few seconds'),
                 booleanParam(name: 'CLEAN_WORKSPACE', defaultValue: true, description: 'Clean the workspace at the end of the run')
         ]),
