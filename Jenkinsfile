@@ -20,10 +20,11 @@ node(params["BUILD_NODE"] ?: buildNodeDefault) {
         checkout(scm)
     }
 
-    String extraVars = "--extra-vars \"index_pattern=$indexPattern" + validateJsonOutput ? " validate=true" : '"'
+    String extraVars = "index_pattern=$indexPattern"
+    extraVars += validateJsonOutput ? " validate=true" : '"'
 
     stage("Generate visualizations") {
-        sh "ansible-playbook kibana/generate.yml --extra-vars $extraVars"
+        sh "ansible-playbook kibana/generate.yml --extra-vars \"$extraVars\""
         archiveArtifacts "kibana/output/"
     }
 
