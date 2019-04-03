@@ -4,6 +4,8 @@ String buildNodeDefault = "omar-build"
 properties([
         parameters([
                 string(name: 'BUILD_NODE', defaultValue: buildNodeDefault, description: 'The build node to run on'),
+                string(name: 'indexPattern', defaultValue: buildNodeDefault, description: 'The Kibana index pattern to build into the visualizations'),
+                booleanParam(name: 'validateJsonOutput', defaultValue: true, description: 'Checks the output is valid JSON. Disable this to save a few seconds'),
                 booleanParam(name: 'CLEAN_WORKSPACE', defaultValue: true, description: 'Clean the workspace at the end of the run')
         ]),
         pipelineTriggers([
@@ -18,9 +20,10 @@ node(params["BUILD_NODE"] ?: buildNodeDefault) {
         checkout(scm)
     }
 
+    String extraVars = "--extra-vars \"index_pattern=$indexPattern" + validateJsonOutput ? " validate=true" : '"'
 
     stage("Generate visualizations") {
-        sh "ansible-playbook kibana/generate.yml"
+        sh "ansible-playbook kibana/generate.yml --extra-vars $extraVars"
         archiveArtifacts "kibana/output/"
     }
 
