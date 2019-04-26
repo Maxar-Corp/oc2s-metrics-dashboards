@@ -19,8 +19,8 @@
       - visualization: Ingested Images
         file: visualizations/ingest/ingest-images.json
 
-      - visualization: Ingested MissionIDs
-        file: visualizations/ingest/ingest-missionids.json
+      - visualization: Ingest MissionIDs Pie
+        file: visualizations/ingest/ingest-missionid-pie.json
 
       - visualization: Ingest Average Duration
         file: visualizations/ingest/ingest-average-duration.json
@@ -51,7 +51,7 @@
         file: visualizations/ingest/ingest-dashboard.json
         panels:
           - visualization: Ingested Images
-          - visualization: Ingested MissionIDs
+          - visualization: Ingest MissionIDs Pie
           - visualization: Ingest Average Duration
           - visualization: Ingested Images Count & Size
           - visualization: Ingest MissionID Count
