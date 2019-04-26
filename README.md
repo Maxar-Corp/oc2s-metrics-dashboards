@@ -6,18 +6,23 @@ Kibana visualizations are generated from JSON files in the `kibana/visualization
 
 For specific template docs, see [this document].
 
-### Quick Start: How to export and save your visualization
+### Quick Start
 
-Follow these steps to export your new visualization or search from Kibana and add it to the play.
+#### Generating the visualizations
 
-#### Steps: Exporting from Kibana
+Navigate to the `kibana/` directory and run the following:
+```
+ansible-playbook generate.yml --extra-vars "index_pattern=<YOUR INDEX PATTERN HERE> validate=true"
+```
+
+#### Exporting from Kibana
 - In Kibana, go to **Management | Saved Objects | Dashboards/Searches/Visualizations**
 - Find the visualization and check its box
 - Click **Export** to download the file
 - Rename the file
 - Move the file into the appropriate subdirectory under _visualizations_
 
-#### Steps: Adding a visualization to the play
+#### Adding a visualization to this repo
 - Open the _generate.yml_ file
 - Add an item to the `kibana` list.
 
