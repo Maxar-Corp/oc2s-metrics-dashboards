@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "70ed4210-65f9-11e9-bb47-eb87250d103a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "(omar-green) Client Requests",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":17,\"w\":17,\"h\":17,\"i\":\"1\"},\"id\":\"e10b4de0-65f8-11e9-bb47-eb87250d103a\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.5.4\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":17,\"w\":15,\"h\":17,\"i\":\"2\"},\"id\":\"c4fb2940-65f8-11e9-8237-e5ad8985b6cd\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.5.4\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":17,\"w\":16,\"h\":17,\"i\":\"3\"},\"id\":\"06254a40-65f9-11e9-8237-e5ad8985b6cd\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.5.4\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"200\":\"#7EB26D\",\"404\":\"#E24D42\"},\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":34,\"w\":24,\"h\":15,\"i\":\"4\"},\"id\":\"omar-green_http-status-chart\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.5.4\"},{\"embeddableConfig\":{\"spy\":null,\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":24,\"y\":34,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"omar-green_response-time-average\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.5.4\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":17,\"i\":\"6\"},\"id\":\"ab3143c0-65fb-11e9-8237-e5ad8985b6cd\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.5.4\"}]",
+      "optionsJSON": "{\"darkTheme\":true,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]

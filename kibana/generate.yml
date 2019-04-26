@@ -178,3 +178,26 @@
           - visualization: Weekly Chip Requests
           - visualization: Weekly HTTP Requests
           - visualization: Weekly Unique Users
+
+      # --- Client ---
+      - visualization: Client IP Pie
+        file: visualizations/client/client_ip_pie.json
+
+      - visualization: Unique Client IPs Chart
+        file: visualizations/client/unique_client_ips_chart.json
+
+      - visualization: Avg. Client IP Requests Per Minute Chart
+        file: visualizations/client/avg_client_ip_requests_per_minute_chart.json
+
+      - visualization: Top Client IPs Table
+        file: visualizations/client/top_client_ips_table.json
+
+      - dashboard: Client Requests Dashboard
+        file: visualizations/client/client_requests_dashboard.json
+        panels:
+          - visualization: Avg. Client IP Requests Per Minute Chart
+          - visualization: Unique Client IPs Chart
+          - visualization: Top Client IPs Table
+          - visualization: Client IP Pie
+          - visualization: HTTP Status Chart
+          - visualization: Response Time Average
