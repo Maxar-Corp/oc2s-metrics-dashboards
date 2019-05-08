@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "07508460-702c-11e9-bb47-eb87250d103a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Images Accessed in Timeframe",
+      "visState": "{\"title\":\"(omar-dev) Images Accessed in Timeframe\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Images Accessed\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"6c7c9e20-6841-11e9-bb47-eb87250d103a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"6c7c9e20-6841-11e9-bb47-eb87250d103a\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-wms-app\",\"params\":{\"query\":\"omar-wms-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-wms-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  }
+]

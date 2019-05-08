@@ -201,3 +201,20 @@
           - visualization: Client IP Pie
           - visualization: HTTP Status Chart
           - visualization: Response Time Average
+
+      # --- Behavior ---
+      - visualization: WMS Popular Images
+        file: visualizations/behavior/wms_popular_images.json
+
+      - visualization: Top Data Types
+        file: visualizations/behavior/top_data_types.json
+
+      - visualization: Images Accessed in Timeframe
+        file: visualizations/behavior/images_accessed_in_timeframe.json
+
+      - dashboard: User Behavior Dashboard
+        file: visualizations/behavior/user_behavior_dashboard.json
+        panels:
+          - visualization: Images Accessed in Timeframe
+          - visualization: Top Data Types
+          - visualization: WMS Popular Images
