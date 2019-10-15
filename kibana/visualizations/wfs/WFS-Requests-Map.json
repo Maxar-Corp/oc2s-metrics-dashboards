@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "74d52fd0-ee9f-11e9-99dc-fbf4b293a578",
+    "_type": "visualization",
+    "_source": {
+      "title": "WFS Requests Map",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"autoPrecision\":true,\"field\":\"location\",\"isFilteredByCollar\":true,\"mapCenter\":{\"lat\":31.240985378021307,\"lon\":55.72265625},\"mapZoom\":4,\"precision\":2,\"useGeocentroid\":true},\"schema\":\"segment\",\"type\":\"geohash_grid\"}],\"params\":{\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"heatClusterSize\":1.5,\"isDesaturated\":true,\"legendPosition\":\"bottomright\",\"mapCenter\":[0,0],\"mapType\":\"Scaled Circle Markers\",\"mapZoom\":2,\"wms\":{\"baseLayersAreLoaded\":{},\"enabled\":false,\"options\":{\"format\":\"image/png\",\"layers\":\"raster_entry\",\"transparent\":true},\"selectedTmsLayer\":{\"attribution\":\"<p>&#169; <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"id\":\"road_map\",\"maxZoom\":18,\"minZoom\":0,\"subdomains\":[],\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.4.0&license=2d9784cb-0ca5-4ec8-8a1e-db9ae1fa2f20\"},\"tmsLayers\":[{\"attribution\":\"<p>&#169; <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"id\":\"road_map\",\"maxZoom\":18,\"minZoom\":0,\"subdomains\":[],\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.4.0&license=2d9784cb-0ca5-4ec8-8a1e-db9ae1fa2f20\"}],\"url\":\"https://omar-dev.ossim.io/omar-wms/getMap\"}},\"title\":\"WFS Requests Map\",\"type\":\"tile_map\"}",
+      "uiStateJSON": "{\"mapCenter\":[29.305561325527698,-12.48046875],\"mapZoom\":3}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"index\":\"977313c0-ca70-11e9-99dc-fbf4b293a578\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kubernetes.container.name\",\"value\":\"omar-wfs-app\",\"params\":{\"query\":\"omar-wfs-app\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kubernetes.container.name\":{\"query\":\"omar-wfs-app\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"index\":\"977313c0-ca70-11e9-99dc-fbf4b293a578\",\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    }
+  }
+]

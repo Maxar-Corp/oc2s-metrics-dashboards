@@ -140,6 +140,9 @@
 
       - visualization: WFS Request Table
         file: visualizations/wfs/WFS-Request-Table.json
+
+      - visualization: WFS Requests Map
+        file: visualizations/wfs/WFS-Requests-Map.json
         
       - dashboard: WFS Request Dashboard
         file: visualizations/wfs/WFS-Request-Dashboard.json
