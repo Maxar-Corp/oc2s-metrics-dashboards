@@ -133,7 +133,7 @@
         file: visualizations/wfs/WFS-Country-Code-Pie.json
 
       - visualization: WFS Mission ID Pie
-        file: visualizations/wfs/WFS-Mission-ID-Pie.json         
+        file: visualizations/wfs/WFS-Mission-ID-Pie.json
 
       - visualization: WFS Sensor ID Pie
         file: visualizations/wfs/WFS-Sensor-ID-Pie.json
@@ -143,7 +143,7 @@
 
       - visualization: WFS Requests Map
         file: visualizations/wfs/WFS-Requests-Map.json
-        
+
       - dashboard: WFS Request Dashboard
         file: visualizations/wfs/WFS-Request-Dashboard.json
         panels:
@@ -151,6 +151,18 @@
           - visualization: WFS Mission ID Pie
           - visualization: WFS Sensor ID Pie
           - visualization: WFS Request Table
+
+     # --- WFS ---
+      - visualization: WFS Requests Map
+        file: visualizations/wfs/WFS-Requests-Map.json
+
+      - dashboard: WFS Mapview
+        file: visualizations/wfs/WFS-Map-Dashboard.json
+        panels:
+          - visualization: WFS Requests Map
+          - visualization: Response Size Chart
+          - visualization: Response Time Average
+          - visualization: HTTP Status Chart
 
       # --- WMS ---
       - visualization: WMS Requests Map
